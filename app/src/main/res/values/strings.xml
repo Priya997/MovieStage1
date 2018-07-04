@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie Time</string>
+    <string name="apiKey">""</string>
+    <string name="img">"http://image.tmdb.org/t/p/"</string>
+</resources>
