@@ -124,7 +124,5 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         this.movies=movies;
         this.rowLayout=rowLayout;
         this.context=context;
-
-    }
-
+        }
 }

@@ -82,11 +82,6 @@ public class DetailsActivity  extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
-
-
-
-
-
     }
 
     public void PopulateUI(movie_List movie)
@@ -98,21 +93,10 @@ public class DetailsActivity  extends AppCompatActivity {
         rating.setText(movie.getVoteAverage().toString());
         language.setText(movie.getOriginalLanguage());
         getSupportActionBar().setTitle(movie.getTitle());
-
-
         Picasso.with(context).load(getImageUrl(movie.getPosterPath(), null)).into(background_image);
         Picasso.with(context).load(getImageUrl(movie.getPosterPath(), null)).into(small_image);
 
-       // Blurry.with(context).from(bitmap).into(background_image);
-        //bitmap = BitmapFactory.decodeFile(null,getImageUrl(movie.getPosterPath()));
-        //Blurry.with(context).from(bitmap).into(background_image);
-
-
-
-
     }
-
-
     public String getImageUrl(String imageName, @Nullable String width) {
         if (width == null) {
             width = "w342/";
@@ -121,6 +105,4 @@ public class DetailsActivity  extends AppCompatActivity {
         }
         return getResources().getString(R.string.img) + width + imageName;
     }
-
-
 }

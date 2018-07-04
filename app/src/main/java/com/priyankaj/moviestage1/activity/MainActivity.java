@@ -84,10 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     if (progressBar != null) {
                         progressBar.setVisibility(View.GONE);
                     }
-
-
                 }
-
                 @Override
                 public void onFailure(retrofit2.Call<movieResponse> call, Throwable t) {
 
@@ -99,12 +96,8 @@ public class MainActivity extends AppCompatActivity {
             {
                 Toast.makeText(this, "Please Check your Internet connection!", Toast.LENGTH_LONG).show();
             }
-
     }
-
-
-
-    public boolean onCreateOptionsMenu(Menu menu) {
+   public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
 
