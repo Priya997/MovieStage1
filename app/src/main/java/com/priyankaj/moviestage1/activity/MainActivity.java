@@ -1,6 +1,7 @@
 package com.priyankaj.moviestage1.activity;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +57,14 @@ public class MainActivity extends AppCompatActivity {
             release = findViewById(R.id.release_year);
             rating = findViewById(R.id.rating);
             final RecyclerView recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+            int currentOrientation = this.getResources().getConfiguration().orientation;
+            if (currentOrientation == Configuration.ORIENTATION_PORTRAIT){
+                recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+            }
+            else{
+                recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
+            }
+
             ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
             Call<movieResponse> call = apiInterface.getTopRatedMovies(API_KEY);
